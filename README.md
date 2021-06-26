@@ -45,7 +45,7 @@ public static JccCert init(String secret1,String receiver) throws  Exception
 /**
 * 文件上链存证
 * @param fis 文件流
-* @return 存证的上链hash和文件hash值:{"fid":"文件hash值","txHash":"上链的交易hash"}
+* @return 存证的上链hash和文件hash值:{"cid":"文件hash值","txHash":"上链的交易hash"}
 * @throws Exception
 */
 public  String saveCert(InputStream fis) throws  Exception
@@ -56,7 +56,7 @@ public  String saveCert(InputStream fis) throws  Exception
 /**
 * 字节流内容上链存证
 * @param input 字节流
-* @return 存证的上链hash和字节流hash值:{"fid":"字节流hash值","txHash":"上链的交易hash"}
+* @return 存证的上链hash和字节流hash值:{"cid":"字节流hash值","txHash":"上链的交易hash"}
 * @throws Exception
 */
 public  String saveCert(byte[] input) throws  Exception
@@ -67,7 +67,7 @@ public  String saveCert(byte[] input) throws  Exception
 /**
 * hash上链存证
 * @param cHash 对象的hash值(调用者生成内容对象的hash值，然后调用该接口进行存证上链)
-* @return 存证的上链hash和字节流hash值:{"fid":"字节流hash值","txHash":"上链的交易hash"}
+* @return 存证的上链hash和字节流hash值:{"cid":"字节流hash值","txHash":"上链的交易hash"}
 * @throws Exception
 */
 public String saveCert(String cHash) throws  Exception
