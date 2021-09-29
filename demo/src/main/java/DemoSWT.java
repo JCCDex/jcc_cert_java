@@ -60,7 +60,7 @@ public class DemoSWT {
             checkRet = jccCert.checkCert(cHash,txHash);
             System.out.println("哈希验真结果:"+checkRet);
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
 }

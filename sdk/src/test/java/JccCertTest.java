@@ -17,7 +17,7 @@ public class JccCertTest extends TestCase {
     public void setUp() {
         try {
             ArrayList<String> rpcNodes = new ArrayList <String> ();
-            rpcNodes.add("http://139.198.19.157:4950");
+            rpcNodes.add("https://testskywelldrpc.ahggwl.com");
             jccCert = JccCert.init(wallet1.getSecret(), wallet2.getAddress(),true,rpcNodes);
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +74,7 @@ public class JccCertTest extends TestCase {
             String txHash = obj.get("txHash").asText();
             fis = new FileInputStream("/Users/xdjiang/Desktop/WechatIMG212.jpeg");
             Boolean ret = jccCert.checkCert(fis,txHash);
+            System.out.println(ret);
             Assert.assertTrue(ret);
             fis.close();
         } catch (Exception e) {
@@ -91,6 +92,7 @@ public class JccCertTest extends TestCase {
             JsonNode obj = mapper.readTree(result);
             String txHash = obj.get("txHash").asText();
             Boolean ret = jccCert.checkCert(input.getBytes("UTF-8"),txHash);
+            System.out.println(ret);
             Assert.assertTrue(ret);
         } catch (Exception e) {
             e.printStackTrace();
@@ -108,6 +110,7 @@ public class JccCertTest extends TestCase {
             JsonNode obj = mapper.readTree(result);
             String txHash = obj.get("txHash").asText();
             Boolean ret = jccCert.checkCert(cHash,txHash);
+            System.out.println(ret);
             Assert.assertTrue(ret);
         } catch (Exception e) {
             e.printStackTrace();

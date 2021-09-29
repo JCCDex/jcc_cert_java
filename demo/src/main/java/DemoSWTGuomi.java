@@ -1,6 +1,5 @@
 
 import com.jccdex.cert.JccCert;
-import com.jccdex.core.client.Wallet;
 import com.jccdex.core.client.WalletSM;
 
 import java.io.FileInputStream;
@@ -33,14 +32,14 @@ public class DemoSWTGuomi {
 
             //hash上链
             System.out.println("哈希存证上链------------------------------------------------------");
-            String cHash = "3b77f64eb774969269555e7154a40ee137f431fa28d24dedcd25a77f54fef6bf";
-            ret = jccCert.saveCert(cHash);
+            String cid = "D913C0CF9AE5B110DE32101B180C562EE010C7DA328BDF472CF06470BBC4CB7D";
+            ret = jccCert.saveCert(cid);
             System.out.println(ret);
 
             //文件验真
             System.out.println("文件验真------------------------------------------------------");
             fis = new FileInputStream("/Users/xdjiang/Desktop/WechatIMG212.jpeg");
-            String txHash = "E5622C3F704C4D9F4312E650DA1FC95A980AF05280701DA311B736E943466CE9";
+            String txHash = "D913C0CF9AE5B110DE32101B180C562EE010C7DA328BDF472CF06470BBC4CB7D";
             Boolean checkRet = jccCert.checkCert(fis,txHash);
             System.out.println("文件验真结果:"+checkRet);
             fis.close();
@@ -48,18 +47,18 @@ public class DemoSWTGuomi {
             //文本内容验真ss
             System.out.println("文本验真------------------------------------------------------");
             input = "测试字节流的存证上链哈希值";
-            txHash = "2F9A4F58A18E7D2F47ABD096776411E956E729E76EEEC7CAD6ECF7AB1DADB502";
+            txHash = "E28E7E67072657ED3679F705DE7C757F537387618C04DC9BC71E05854CE5FA42";
             checkRet = jccCert.checkCert(input.getBytes("UTF-8"),txHash);
             System.out.println("文本验真结果:"+checkRet);
 
             //hash验真
             System.out.println("哈希验真------------------------------------------------------");
-            cHash = "3b77f64eb774969269555e7154a40ee137f431fa28d24dedcd25a77f54fef6bf";
-            txHash = "FE93BDED70DBF9A6CC336F3BAE1FB2EB97173583E59E5C07964B3E78BA6E94FC";
-            checkRet = jccCert.checkCert(cHash,txHash);
+            cid = "3b77f64eb774969269555e7154a40ee137f431fa28d24dedcd25a77f54fef6bf";
+            txHash = "BD6E853E37139A462BC1383087E139739034AABD9FCC492553F971D3495462DA";
+            checkRet = jccCert.checkCert(cid,txHash);
             System.out.println("哈希验真结果:"+checkRet);
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
 }
