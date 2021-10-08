@@ -17,7 +17,7 @@ public class JccCertTest extends TestCase {
     public void setUp() {
         try {
             ArrayList<String> rpcNodes = new ArrayList <String> ();
-            rpcNodes.add("https://testskywelldrpc.ahggwl.com");
+            rpcNodes.add("http://139.198.19.157:4950");
             jccCert = JccCert.init(wallet1.getSecret(), wallet2.getAddress(),true,rpcNodes);
         } catch (Exception e) {
             e.printStackTrace();

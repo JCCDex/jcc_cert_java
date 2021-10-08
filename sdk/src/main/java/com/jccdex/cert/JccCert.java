@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * 存证工具类
  * @author xdjiang
- * @version 1.0.0
+ * @version 1.1.1
  */
 public class JccCert {
     private  String  secret = null;
